@@ -97,7 +97,7 @@ Omit fields that are not applicable.
     rewards_str = ",".join(f"{r:.2f}" for r in rewards)
     if not rewards_str:
         rewards_str = "0.00"
-    print(f"[END] success={str(success).lower()} steps={step_n} rewards={rewards_str}")
+    print(f"[END] success={str(success).lower()} steps={step_n} score={env.reward:.2f} rewards={rewards_str}")
 
 if __name__ == "__main__":
     for t in ["easy", "medium", "hard"]:
@@ -107,4 +107,4 @@ if __name__ == "__main__":
             # Output an END tag if we fail
             import traceback
             traceback.print_exc()
-            print(f"[END] success=false steps=0 rewards=0.00")
+            print(f"[END] success=false steps=0 score=0.00 rewards=0.00")
