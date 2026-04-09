@@ -4,13 +4,19 @@ description: "A real-world environment simulating an email triage task with 3 di
 maintainer: "author@example.com"
 tasks:
   - id: "easy"
+    name: "Easy Spam Deletion"
     description: "Delete a spam email."
+    difficulty: "easy"
     max_steps: 10
   - id: "medium"
+    name: "Medium Invoice Forwarding"
     description: "Forward an important email to the right person based on content."
+    difficulty: "medium"
     max_steps: 10
   - id: "hard"
+    name: "Hard Customer Response"
     description: "Reply to a customer query using a specific template and draft, and file it in Support/Resolved."
+    difficulty: "hard"
     max_steps: 10
 observation:
   type: "pydantic"
