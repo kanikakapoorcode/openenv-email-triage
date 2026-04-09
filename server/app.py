@@ -38,9 +38,15 @@ def step(action: Action):
     # Respond to step() endpoint
     try:
         obs, reward, done, info = env.step(action)
+        # Clamp all scores to strict (0, 1) interval
+        clamped_reward = max(0.01, min(0.99, reward))
+        if "total_reward" in info:
+            info["total_reward"] = max(0.01, min(0.99, info["total_reward"]))
+        if "step_reward" in info:
+            info["step_reward"] = max(0.01, min(0.99, info["step_reward"]))
         return {
             "observation": obs.model_dump(),
-            "reward": reward,
+            "reward": clamped_reward,
             "done": done,
             "info": info
         }

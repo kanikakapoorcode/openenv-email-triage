@@ -149,6 +149,9 @@ class EmailTriageEnv:
             
         self.reward = self._compute_total_reward()
         
+        # Clamp step_reward to strict (0, 1) interval
+        step_reward = max(0.01, min(0.99, step_reward))
+        
         info = {
             "step_reward": step_reward,
             "total_reward": self.reward,
