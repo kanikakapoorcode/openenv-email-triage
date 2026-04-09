@@ -1,0 +1,23 @@
+name: "email-triage"
+version: "1.0.0"
+description: "A real-world environment simulating an email triage task with 3 difficulty levels (easy, medium, hard)."
+maintainer: "author@example.com"
+tasks:
+  - id: "easy"
+    description: "Delete a spam email."
+    max_steps: 10
+  - id: "medium"
+    description: "Forward an important email to the right person based on content."
+    max_steps: 10
+  - id: "hard"
+    description: "Reply to a customer query using a specific template and draft, and file it in Support/Resolved."
+    max_steps: 10
+observation:
+  type: "pydantic"
+  model: "env:Observation"
+action:
+  type: "pydantic"
+  model: "env:Action"
+reward:
+  type: "scalar"
+  range: [0.0, 1.0]
