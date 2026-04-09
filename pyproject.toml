@@ -15,9 +15,14 @@ dependencies = [
     "pydantic>=2.0.0",
     "openai>=1.0.0",
     "fastapi>=0.100.0",
+<<<<<<< HEAD
     "uvicorn>=0.20.0",
     "openenv-core>=0.2.0"
 ]
 
 [project.scripts]
 server = "server.app:start"
+=======
+    "uvicorn>=0.20.0"
+]
+>>>>>>> 28db8a787cf24de1a6e54dabe6736b25a92d11c2
