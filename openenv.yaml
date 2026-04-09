@@ -26,4 +26,4 @@ action:
   model: "env:Action"
 reward:
   type: "scalar"
-  range: [0.0, 1.0]
+  range: [0.01, 0.99]

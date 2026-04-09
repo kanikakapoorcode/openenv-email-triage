@@ -196,4 +196,5 @@ class EmailTriageEnv:
                 score += 0.5
             total += score
             
-        return max(0.0, min(1.0, total))
+        # Clamp to open interval (0, 1) — scores must be strictly between 0 and 1
+        return max(0.01, min(0.99, total))

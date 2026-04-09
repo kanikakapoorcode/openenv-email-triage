@@ -93,7 +93,7 @@ Omit fields that are not applicable.
         if done:
             break
             
-    success = (env.reward == 1.0)
+    success = (env.reward >= 0.99)
     rewards_str = ",".join(f"{r:.2f}" for r in rewards)
     if not rewards_str:
         rewards_str = "0.00"
@@ -107,4 +107,4 @@ if __name__ == "__main__":
             # Output an END tag if we fail
             import traceback
             traceback.print_exc()
-            print(f"[END] success=false steps=0 score=0.00 rewards=0.00")
+            print(f"[END] success=false steps=0 score=0.01 rewards=0.01")
